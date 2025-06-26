@@ -306,7 +306,7 @@ function setupEventListeners() {
 //reverseGeolocation
 
 function reverseGeocode(lat, lng) {
-  fetch("http://localhost:3000/api/reverse-geocode", {
+  fetch("/api/reverse-geocode", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -601,7 +601,7 @@ async function calculateAndDisplayRoute(originStr, destinationStr, travelMode) {
   const profile = orsProfileMap[travelMode.toLowerCase()] || "walking";
 
   try {
-    const response = await fetch("http://localhost:3000/api/route", {
+    const response = await fetch("/api/route", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
