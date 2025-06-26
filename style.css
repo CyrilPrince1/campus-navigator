@@ -58,12 +58,22 @@ body {
 
 /* Custom div icon for geolocation marker */
 .leaflet-div-icon {
-  background: #10b981; /* Tailwind green-500 */
+  background: #019463; /* Tailwind green-500 */
   border-radius: 50%;
-  border: 2px solid white;
+  border: 2px solid rgb(67, 1, 1);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  width: 20px !important; /* Important to override Leaflet default */
-  height: 20px !important;
+  width: 25px !important; /* Important to override Leaflet default */
+  height: 25px !important;
+  margin-left: -10px !important; /* Center the div icon */
+  margin-top: -10px !important;
+}
+.leaflet-div-icon2 {
+  background: #bbbd50; /* Tailwind green-500 */
+  border-radius: 50%;
+  border: 2px solid rgb(67, 1, 1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 15px !important; /* Important to override Leaflet default */
+  height: 15px !important;
   margin-left: -10px !important; /* Center the div icon */
   margin-top: -10px !important;
 }

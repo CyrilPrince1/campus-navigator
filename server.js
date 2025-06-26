@@ -8,10 +8,9 @@ const app = express();
 dotenv.config();
 const PORT = 3000;
 const ORS_API_KEY = process.env.ORS_API_KEY;
-
+app.use(express.static(__dirname));
 app.use(cors());
 app.use(express.json());
-app.use(express.static(__dirname));
 
 const profileMap = {
   walking: "foot-walking",
@@ -74,6 +73,36 @@ app.post("/api/reverse-geocode", async (req, res) => {
   } catch (err) {
     console.error("ORS proxy error:", err);
     res.status(500).json({ error: "Server failed to reverse geocode" });
+  }
+});
+
+app.post("/api/geocode", async (req, res) => {
+  const { query } = req.body;
+
+  if (!query) {
+    return res.status(400).json({ error: "Query is required" });
+  }
+
+  try {
+    const nominatimURL = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
+      query
+    )}&limit=1`;
+
+    const response = await fetch(nominatimURL, {
+      headers: {
+        "User-Agent": "CampusNavigator/1.0 (aprincecyril@gmail.com)", //required
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Nominatim error: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    console.error("Geocoding error:", error);
+    res.status(500).json({ error: "Failed to geocode location" });
   }
 });
 

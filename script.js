@@ -87,16 +87,22 @@ function initMap() {
     "info"
   );
 }
-
+//gps tracking function
 const setGPStracking = function () {
   let userTrace;
   navigator.geolocation.watchPosition(
     function (position) {
       const { latitude, longitude } = position.coords;
-
+      const userIcon = L.divIcon({
+        className: "leaflet-div-icon", // Custom class for styling
+        iconSize: [25, 25],
+        html: "", // No inner HTML, just a styled div
+      });
       if (!userTrace) {
-        userTrace = L.marker([latitude, longitude]).addTo(map);
-        map.setView([latitude, longitude], 15);
+        userTrace = L.marker([latitude, longitude], { icon: userIcon })
+          .addTo(map)
+          .bindPopup("👍 Live Location ✅")
+          .openPopup();
       } else {
         userTrace.setLatLng([latitude, longitude]);
       }
@@ -341,19 +347,20 @@ function getCurrentLocation() {
           map.removeLayer(userLocationMarker);
         }
 
-        // Add a custom div icon for the user's current location
+        //Add a custom div icon for the user's current location
         const userIcon = L.divIcon({
-          className: "leaflet-div-icon", // Custom class for styling
-          iconSize: [20, 20],
+          className: "leaflet-div-icon2", // Custom class for styling
+          iconSize: [15, 15],
           html: "", // No inner HTML, just a styled div
         });
 
         userLocationMarker = L.marker(userLatLng, { icon: userIcon })
           .addTo(map)
-          .bindPopup("Your current location!")
+          .bindPopup("❗starting location! ")
           .openPopup();
 
-        map.setView(userLatLng, 16); // Center map on user's location
+        // Center map on user's location
+        map.setView(userLatLng, 17);
 
         // Populate origin input with a readable format or coordinates
         // document.getElementById(
@@ -430,14 +437,14 @@ async function geocodeAddress(query) {
 
   // 4. Fallback to Nominatim for arbitrary addresses
   displayMessage(`Geocoding "${query}" with Nominatim...`, "info");
-  const nominatimUrl = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
-    query
-  )}&limit=1`;
+
   try {
-    const response = await fetch(nominatimUrl, {
+    const response = await fetch("/api/geocode", {
+      method: "POST",
       headers: {
-        "User-Agent": "CampusNavigatorApp/1.0 (aprincecyril@gmail.com)",
+        "Content-Type": "application/json",
       },
+      body: JSON.stringify({ query }),
     });
     if (!response.ok) {
       throw new Error(`Nominatim HTTP error! Status: ${response.status}`);
@@ -472,6 +479,7 @@ async function calculateAndDisplayRoute(originStr, destinationStr, travelMode) {
   clearRoute(); // Always clear previous route before drawing a new one
 
   // Geocode origin and destination strings to coordinates
+
   const originCoords = await geocodeAddress(originStr);
   const destinationCoords = await geocodeAddress(destinationStr);
 
@@ -490,106 +498,6 @@ async function calculateAndDisplayRoute(originStr, destinationStr, travelMode) {
     return;
   }
   //////////////////////////////////////
-
-  ////////////////////////////////////////
-
-  // OSRM API endpoint (public demo server)
-  // Travel modes: 'driving', 'walking', 'cycling'
-  //   console.log(travelMode);
-  //   const osrmMode = travelMode.toLowerCase();
-  //   const OSRM_URL = `https://router.project-osrm.org/route/v1/${osrmMode}/`;
-  //   const waypoints = `${originCoords[1]},${originCoords[0]};${destinationCoords[1]},${destinationCoords[0]}`; // OSRM expects [lng, lat]
-  //   const url = `${OSRM_URL}${waypoints}?overview=full&steps=true&geometries=geojson`;
-
-  //   try {
-  //     const response = await fetch(url);
-  //     if (!response.ok) {
-  //       // Handle HTTP errors (e.g., 404, 500) from OSRM server
-  //       throw new Error(
-  //         `OSRM service error: ${response.statusText || response.status}`
-  //       );
-  //     }
-  //     const data = await response.json();
-
-  //     if (data.code === "Ok" && data.routes && data.routes.length > 0) {
-  //       const route = data.routes[0];
-  //       const routeGeometry = route.geometry; // GeoJSON LineString
-  //       const routeCoordinates = routeGeometry.coordinates.map((coord) => [
-  //         coord[1],
-  //         coord[0],
-  //       ]); // Convert [lng, lat] to [lat, lng] for Leaflet
-
-  //       // Add the route to the map as a polyline layer
-  //       currentRouteLayer = L.polyline(routeCoordinates, {
-  //         color: "#4A90E2", // Blue route line, defined in custom CSS
-  //         weight: 7,
-  //         opacity: 0.8,
-  //       }).addTo(map);
-
-  //       // Fit the map view to the bounds of the drawn route
-  //       map.fitBounds(currentRouteLayer.getBounds(), { padding: [50, 50] }); // Add padding
-
-  //       // Display textual directions in the sidebar
-  //       let directionsHtml = `<h4 class="text-content-title">Directions (${travelMode.toLowerCase()})</h4>`;
-
-  //       directionsHtml += `<div class="direction-summary">`;
-  //       directionsHtml += `<span>Distance: <span class="direction-value">${(
-  //         route.distance / 1000
-  //       ).toFixed(2)} km</span></span>`;
-  //       directionsHtml += `-<span>Duration: <span class="direction-value">${formatDuration(
-  //         route.duration
-  //       )}</span></span>`;
-  //       directionsHtml += `</div>`;
-
-  //       if (route.legs && route.legs.length > 0) {
-  //         directionsHtml += `<ol class="direction-steps">`;
-  //         console.log(route.legs[0].steps);
-  //         route.legs[0].steps.forEach((step) => {
-  //           directionsHtml += `<li>${
-  //             step.maneuver.modifier
-  //           } (<span class="direction-step-distance">${(
-  //             step.distance / 1000
-  //           ).toFixed(2)} km</span>)</li>`;
-
-  //           console.log(step.maneuver.instruction);
-  //         });
-
-  //         directionsHtml += `</ol>`;
-  //       } else {
-  //         directionsHtml += `<p class="text-warning">No detailed steps available for this route.</p>`;
-  //       }
-
-  //       document.getElementById("location-details").innerHTML = directionsHtml;
-  //       displayMessage("Directions loaded successfully!", "success");
-  //     } else if (data.code === "NoRoute") {
-  //       displayMessage(
-  //         `No route could be found between the specified points for ${travelMode.toLowerCase()}.`,
-  //         "warning"
-  //       );
-  //       document.getElementById(
-  //         "location-details"
-  //       ).innerHTML = `<p class="text-error">No route found for the selected locations and travel mode. Try different points.</p>`;
-  //     } else {
-  //       // Generic OSRM API error
-  //       displayMessage(
-  //         `OSRM routing error: ${data.code || "Unknown"}. ${
-  //           data.message || "Please try again."
-  //         }`,
-  //         "error"
-  //       );
-  //       document.getElementById(
-  //         "location-details"
-  //       ).innerHTML = `<p class="text-error">An error occurred during routing. Check your inputs.</p>`;
-  //     }
-  //   } catch (error) {
-  //     displayMessage(`Failed to get directions: ${error.message}.`, "error");
-  //     document.getElementById(
-  //       "location-details"
-  //     ).innerHTML = `<p class="text-error">Error fetching directions.check your connection and try again</p>`;
-  //     console.error("OSRM directions fetch error:", error);
-  //   }
-  // }
-
   //ORS travel mode
 
   const orsProfileMap = {
