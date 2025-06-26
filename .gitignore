@@ -1,0 +1,13 @@
+# Node.js
+node_modules/
+npm-debug.log
+.env
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Optional: OS-specific junk
+Thumbs.db
