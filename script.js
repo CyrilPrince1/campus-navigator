@@ -468,14 +468,14 @@ async function geocodeAddress(query) {
 }
 
 /**
- * Calculates and displays a route between two points on the map using the OSRM API.
+ * Calculates and displays a route between two points on the map using the ORS API.
  * Provides user feedback for loading, success, and various error scenarios.
  * @param {string} originStr - The starting point as a string (address or location name).
  * @param {string} destinationStr - The ending point as a string (address or location name).
  * @param {string} travelMode - The mode of travel (e.g., 'WALKING', 'DRIVING', 'BICYCLING').
  */
 async function calculateAndDisplayRoute(originStr, destinationStr, travelMode) {
-  displayMessage("Calculating directions with OSRM...", "info");
+  displayMessage("Calculating directions with ORS...", "info");
   clearRoute(); // Always clear previous route before drawing a new one
 
   // Geocode origin and destination strings to coordinates
