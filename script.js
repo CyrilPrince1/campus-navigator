@@ -321,6 +321,7 @@ function reverseGeocode(lat, lng) {
   })
     .then((res) => res.json())
     .then((data) => {
+      console.log(data.features[0]);
       const place = data.features[0]?.properties?.street || "Unknown location";
       document.getElementById("origin-input").value = `Location (${place})`;
     })
