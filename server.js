@@ -6,7 +6,7 @@ const dotenv = require("dotenv");
 
 const app = express();
 dotenv.config();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const ORS_API_KEY = process.env.ORS_API_KEY;
 app.use(express.static(__dirname));
 app.use(cors());
