@@ -18,32 +18,32 @@ const campusLocations = {
     description:
       "Annenberg Hall - Main dining facility, offering various cuisines.",
   },
-  "Admin Building": {
+  AdminBuilding: {
     coords: [5.596872870663835, -0.22324127897132412],
     description:
       "University Hall - Central administration building for student services.",
   },
-  "Lecture Hall B": {
+  LectureHallB: {
     coords: [5.595505454837914, -0.22384014559250479],
     description:
       "Science Center Lecture Hall B - Used for major courses and events.",
   },
-  "Sports Complex": {
+  SportsComplex: {
     coords: [5.595053646080984, -0.2235511581914859],
     description:
       "Harvard Athletics Complex - Includes gym, pool, and various courts.",
   },
-  "Student Union": {
+  StudentUnion: {
     coords: [5.596155635453689, -0.22295836005308878],
     description:
       "Harvard Union - Vibrant hub for student activities and relaxation.",
   },
-  "Engineering Building": {
+  EngineeringBuilding: {
     coords: [5.59582302711884, -0.22407434329939152],
     description:
       "Maxwell Dworkin - Computer Science and Electrical Engineering department.",
   },
-  "Art Studio": {
+  ArtStudio: {
     coords: [5.596015490596719, -0.2225499937292857],
     description:
       "Carpenter Center for the Visual Arts - Creative space for art and design.",
@@ -54,7 +54,7 @@ const campusLocations = {
 
 // Define the central point of the campus. This is where the map will initially focus.
 const CAMPUS_CENTER = [5.596359392848146, -0.22317617191216468];
-const INITIAL_ZOOM = 18; // Adjust zoom level based on your campus size
+const INITIAL_ZOOM = 18; // zoom level
 
 /**
  * Initializes the Leaflet Map and sets up initial layers and markers.
@@ -148,6 +148,7 @@ function addCampusMarkers() {
     marker.on("click", () => {
       displayLocationDetails(locationName, locationData.description);
       document.getElementById("search-input").value = locationName;
+      console.log(locationName);
       clearRoute(); // Clear previous route when a new marker is clicked
       displayMessage("", "clear"); // Clear any previous status messages
     });
@@ -220,7 +221,7 @@ function setupEventListeners() {
 
   // Event listener for the search button click.
   searchButton.addEventListener("click", () => {
-    const query = searchInput.value.trim();
+    const query = searchInput.value.trim().replace(/\s+/g, "");
     if (query) {
       const foundLocationName = Object.keys(campusLocations).find((key) =>
         key.toLowerCase().includes(query.toLowerCase())
@@ -321,8 +322,7 @@ function reverseGeocode(lat, lng) {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data.features[0]);
-      const place = data.features[0]?.properties?.street || "Unknown location";
+      const place = data.features[0]?.properties?.street || "Unknown Street";
       document.getElementById("origin-input").value = `Location (${place})`;
     })
     .catch((err) => {

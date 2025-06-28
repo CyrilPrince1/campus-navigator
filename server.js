@@ -19,6 +19,7 @@ const ORS_API_KEY = process.env.ORS_API_KEY;
 const userEmail = process.env.EMAIL_USER;
 const userPassword = process.env.EMAIL_PASSWORD;
 
+//mode of travel
 const profileMap = {
   walking: "foot-walking",
   driving: "driving-car",

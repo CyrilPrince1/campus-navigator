@@ -1,5 +1,5 @@
 /* style.css */
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 /* Custom font definition (Tailwind typically imports this, but keeping it explicit) */
 body {
   font-family: "Inter", sans-serif;
@@ -45,15 +45,50 @@ body {
 }
 
 .info-window-title {
-  @apply text-lg font-semibold mb-1 text-gray-800; /* Apply Tailwind classes via CSS for consistency */
+  background-color: #e23408;
+  color: #000;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bolder;
+  border-radius: 10px;
+  border: #000;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  /* @apply text-lg font-semibold mb-1 text-gray-800; Apply Tailwind classes via CSS for consistency */
 }
 
 .info-window-description {
-  @apply text-sm text-gray-600 mb-2;
+  color: #000;
+  font-size: 13px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bolder;
+  background-color: #e8d508e6;
+  padding: 10px;
+  border: #000;
+  border-radius: 10px;
+  width: 100%;
+  letter-spacing: 1px;
+  /* @apply text-sm text-gray-600 mb-2; */
 }
 
 .info-window-button {
-  @apply bg-blue-500 text-white px-3 py-2 rounded-md hover:bg-blue-600 transition duration-300 text-sm shadow-sm;
+  background-color: #4c6ef4;
+  padding: 10px;
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  font-weight: bolder;
+  font-size: 12px;
+  font-style: "Poppins", sans-serif;
+  /* @apply bg-blue-500 text-white px-3 py-2 rounded-md hover:bg-blue-600 transition duration-300 text-sm shadow-sm; */
+}
+
+.info-window-button:hover {
+  background-color: #143cde;
+  transform: translateY(5px);
+  color: #fff;
 }
 
 /* Custom div icon for geolocation marker */

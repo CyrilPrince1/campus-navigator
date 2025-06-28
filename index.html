@@ -140,12 +140,28 @@
               class="block text-gray-700 text-sm font-medium mb-2"
               >To:</label
             >
-            <input
+            <!-- <input
               type="text"
               id="destination-input"
               placeholder="e.g., Library, Building A"
               class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
-            />
+            /> -->
+
+            <select
+              id="destination-input"
+              class="w-full p-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm appearance-none cursor-pointer"
+            >
+              <option value="">Select</option>
+              <option value="Library">Library</option>
+              <option value="AdminBuilding">Admin Building</option>
+              <option value="SportsComplex">Sports Complex</option>
+              <option value="EngineeringBuilding">Engineering Building</option>
+              <option value="Cafeteria">Cafeteria</option>
+              <option value="LectureHallB">Lecture Hall B</option>
+              <option value="StudentUnion">Student Union</option>
+              <option value="StudentUnion">Student Union</option>
+              <option value="ArtStudio">Art Studio</option>
+            </select>
           </div>
           <div class="mb-6">
             <label
@@ -214,13 +230,13 @@
             </button>
             <button
               class="quick-link-button bg-yellow-500 text-white p-3 rounded-lg shadow-md hover:bg-yellow-600 transition duration-300"
-              data-location="Admin Building"
+              data-location="AdminBuilding"
             >
               Admin Building
             </button>
             <button
               class="quick-link-button bg-red-500 text-white p-3 rounded-lg shadow-md hover:bg-red-600 transition duration-300"
-              data-location="Lecture Hall B"
+              data-location="LectureHallB"
             >
               Lecture Hall B
             </button>
