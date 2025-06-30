@@ -9,7 +9,7 @@ let userLocationMarker; // Stores the marker for the user's current location
 // IMPORTANT: Replace these with actual coordinates relevant to your campus!
 const campusLocations = {
   Library: {
-    coords: [5.59634590406082, -0.22314718275175768],
+    coords: [5.596684, -0.2234408],
     description:
       "Widener Library - The main university library. A central hub for academic resources.",
   },
@@ -90,32 +90,33 @@ function initMap() {
 //gps tracking function
 const setGPStracking = function () {
   let userTrace;
-  navigator.geolocation.watchPosition(
-    function (position) {
-      const { latitude, longitude } = position.coords;
-      const userIcon = L.divIcon({
-        className: "leaflet-div-icon", // Custom class for styling
-        iconSize: [25, 25],
-        html: "", // No inner HTML, just a styled div
-      });
-      if (!userTrace) {
-        userTrace = L.marker([latitude, longitude], { icon: userIcon })
-          .addTo(map)
-          .bindPopup("👍 Live Location ✅")
-          .openPopup();
-      } else {
-        userTrace.setLatLng([latitude, longitude]);
+  if (navigator.geolocation)
+    navigator.geolocation.watchPosition(
+      function (position) {
+        const { latitude, longitude } = position.coords;
+        const userIcon = L.divIcon({
+          className: "leaflet-div-icon", // Custom class for styling
+          iconSize: [25, 25],
+          html: "", // No inner HTML, just a styled div
+        });
+        if (!userTrace) {
+          userTrace = L.marker([latitude, longitude], { icon: userIcon })
+            .addTo(map)
+            .bindPopup("👍 Live Location ✅")
+            .openPopup();
+        } else {
+          userTrace.setLatLng([latitude, longitude]);
+        }
+      },
+      function (error) {
+        alert("geolocation error");
       }
-    },
-    function (error) {
-      alert("geolocation error");
-    }
-  ),
-    {
-      enableHighAccuracy: true,
-      maximumAge: 0,
-      timeout: 10000,
-    };
+    ),
+      {
+        enableHighAccuracy: true,
+        maximumAge: 0,
+        timeout: 10000,
+      };
 };
 
 /**
