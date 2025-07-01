@@ -11,42 +11,42 @@ const campusLocations = {
   Library: {
     coords: [5.596684, -0.2234408],
     description:
-      "Widener Library - The main university library. A central hub for academic resources.",
+      " The main university library. A central hub for academic resources.",
   },
   Cafeteria: {
-    coords: [5.595289588556981, -0.22367428106768558],
+    coords: [5.5963245, -0.2231705],
     description:
-      "Annenberg Hall - Main dining facility, offering various cuisines.",
+      " Main dining facility, offering various dishes, both local and continental",
   },
   AdminBuilding: {
-    coords: [5.596872870663835, -0.22324127897132412],
-    description:
-      "University Hall - Central administration building for student services.",
+    coords: [5.5968431, -0.2233049],
+    description: "Central administration building for student services.",
   },
   LectureHallB: {
-    coords: [5.595505454837914, -0.22384014559250479],
-    description:
-      "Science Center Lecture Hall B - Used for major courses and events.",
+    coords: [5.596591, -0.2237578],
+    description: "Class rooms for Learning.",
   },
-  SportsComplex: {
-    coords: [5.595053646080984, -0.2235511581914859],
+  Colt: {
+    coords: [5.5965827, -0.2237697],
     description:
-      "Harvard Athletics Complex - Includes gym, pool, and various courts.",
+      "center for helping students who have difficulties in accessing the online learning platform.",
   },
-  StudentUnion: {
-    coords: [5.596155635453689, -0.22295836005308878],
-    description:
-      "Harvard Union - Vibrant hub for student activities and relaxation.",
+  Focis: {
+    coords: [5.5959132, -0.2236946],
+    description: "Faculty of Computer Science.",
   },
   EngineeringBuilding: {
-    coords: [5.59582302711884, -0.22407434329939152],
-    description:
-      "Maxwell Dworkin - Computer Science and Electrical Engineering department.",
+    coords: [5.5959972, -0.222867],
+    description: " Engineering department.",
   },
-  ArtStudio: {
-    coords: [5.596015490596719, -0.2225499937292857],
-    description:
-      "Carpenter Center for the Visual Arts - Creative space for art and design.",
+  HealthCenter: {
+    coords: [5.5960156, -0.223984],
+    description: "Main health facility on campus.",
+  },
+
+  BlockC: {
+    coords: [5.636096, -0.1769472],
+    description: "lecture Hall.",
   },
 };
 
