@@ -53,121 +53,518 @@
       </div>
     </header>
 
-    <!-- Main Content Area for About Page -->
-    <main class="container mx-auto p-4 flex-grow my-6">
-      <section
-        class="bg-white p-8 rounded-2xl shadow-xl flex flex-col items-start"
-      >
-        <h2
-          class="text-3xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-blue-500 w-full"
+  
+
+    <div
+      class="relative w-screen overflow-x-hidden bg-cover bg-center"
+      style="background-image: url('./Images/from-pins-map.jpg')"
+    >
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+      <!-- Content -->
+      <div class="relative container mx-auto px-4 py-20">
+        <div class="flex justify-center items-center">
+          <div class="text-center max-w-xl">
+            <h1 class="text-white text-4xl font-bold mb-4" data-aos="fade-up">
+              About
+            </h1>
+            <p class="text-white text-lg leading-relaxed" data-aos="fade-up"">
+              Our commitment to innovation goes beyond navigation. We envision a
+              platform that can support student safety, event discovery, and
+              real-time updates — ultimately enhancing student life through tech
+              empowerment.
+            </p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="w-screen overflow-x-hidden py-16">
+      <div class="container mx-auto px-[2rem]">
+        <div class="flex flex-wrap justify-between items-center mb-12">
+          <div class="w-full lg:w-5/12" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-4">About Us</h2>
+            <p>
+              Campus Navigator develops ethical, inclusive digital solutions
+              that enhance student life. In collaboration with university
+              stakeholders, our team seeks to reduce stress, disorientation, and
+              time-wasting by introducing efficient navigation and scheduling
+              tools tailored to local campus needs.
+            </p>
+          </div>
+          <div class="w-full lg:w-6/12" data-aos="fade-up" data-aos-delay="100">
+            <blockquote class="italic text-xl font-semibold">
+              "Empowering students through intelligent campus technology for
+              academic and social success."
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- Tabs Section -->
+        <div class="flex flex-wrap justify-between py-24">
+          <div
+            class="w-full lg:w-5/12 pe-0 lg:pe-10"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="mb-8">
+              <ul class="flex border-b" id="tab-menu">
+                <li class="mr-6">
+                  <a
+                    data-target="vision"
+                    class="tab-link inline-block py-2 px-4 font-semibold border-b-2 border-blue-600"
+                    href="#"
+                    >Our Vision</a
+                  >
+                </li>
+                <li class="mr-6">
+                  <a
+                    data-target="mission"
+                    class="tab-link inline-block py-2 px-4"
+                    href="#"
+                    >Our Mission</a
+                  >
+                </li>
+                <li class="mr-6">
+                  <a
+                    data-target="goals"
+                    class="tab-link inline-block py-2 px-4"
+                    href="#"
+                    >Our Goals</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div id="vision" class="mb-10">
+              <h2 class="text-2xl font-bold mb-3">Our Vision</h2>
+              <p>
+                Campus Navigator envisions a future where every student can
+                explore and engage with their campus using real-time smart
+                technology. We aim to reduce disorientation, improve campus
+                safety, and increase productivity through intuitive, accessible
+                platforms.
+              </p>
+            </div>
+
+            <div id="mission" class="hidden mb-10">
+              <h2 class="text-2xl font-bold mb-3">Our Mission</h2>
+              <p>
+                Our mission is to simplify campus exploration. We understand
+                that a large university campus can be overwhelming, especially
+                for newcomers. By providing clear directions, detailed location
+                information, and an intuitive interface, we aim to reduce stress
+                and enhance the campus experience for everyone.
+              </p>
+            </div>
+
+            <div id="goals" class="hidden">
+              <h2 class="text-2xl font-bold mb-3">Our Goals</h2>
+              <ul class="list-disc ml-6 space-y-2">
+                <li>
+                  <strong>Interactive Campus Map:</strong> A dynamic map showing
+                  all key buildings, facilities, and points of interest.
+                </li>
+                <li>
+                  <strong>Smart Search:</strong> Easily find any campus location
+                  by name.
+                </li>
+                <li>
+                  <strong>Turn-by-Turn Directions:</strong> Get precise
+                  directions for walking, driving, or cycling between any two
+                  points on campus, powered by OSRM.
+                </li>
+                <li>
+                  <strong>"My Location" Feature:</strong> Instantly pinpoint
+                  your current position on the map.
+                </li>
+                <li>
+                  <strong>Quick Links:</strong> Fast access to popular campus
+                  destinations.
+                </li>
+                <li>
+                  <strong>Responsive Design:</strong> Optimized for seamless use
+                  on any device, from smartphones to desktops.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-6/12 flex justify-center">
+            <img
+              class="rounded-lg shadow-lg"
+              src="./Images/from-pins-map.jpg"
+              alt="OAD Image"
+              width="500"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gray-100 overflow-x-hidden w-screen">
+      <div class="container mx-auto px-[4rem] py-8">
+        <div class="flex flex-wrap mb-10">
+          <div class="w-full lg:w-1/3 mb-6" data-aos="fade-up">
+            <h2 class="text-3xl font-bold">Who We Are</h2>
+          </div>
+          <div class="w-full lg:w-2/3" data-aos="fade-up" data-aos-delay="100">
+            <p>
+              Our team consists of passionate developers and designers dedicated
+              to improving campus life through smart digital innovation. Campus
+              Navigator is designed to make campus navigation seamless,
+              accessible, and efficient for students, staff, and visitors.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-y-8 mt-10 items-start">
+          <!-- Example card -->
+
+          <!-- More cards go here... (use the same structure for each person) -->
+        </div>
+
+        <div class="text-center mt-16" data-aos="fade-up">
+          <h4 class="text-[40px] font-bold text-blue-600">DEVELOPMENT TEAM</h4>
+        </div>
+
+        <div class="flex flex-wrap gap-y-8 mt-10 items-start">
+          <!-- Example advisory board card -->
+          <div class="w-full lg:w-1/4 flex items-center">
+            <div class="w-full bg-[#f0f8f4] text-center p-4">
+              <img
+                src="./Images/dapper-man-with-flowers.jpg "
+                alt="Image"
+                class="w-1/2 mx-auto rounded-full mb-4"
+              />
+              <h4 class="uppercase font-semibold mb-1">Aboagye Henry</h4>
+              <p class="text-gray-500">Lead Developer</p>
+              <p>Software Engineer & UX Enthusiast</p>
+              <p>Student, Computer Science</p>
+            </div>
+          </div>
+          <!-- Repeat for the rest -->
+          <div class="w-full lg:w-1/4 flex items-center">
+            <div class="w-full bg-[#f0f8f4] text-center p-4">
+              <img
+                src="./Images/dapper-man-with-flowers.jpg "
+                alt="Image"
+                class="w-1/2 mx-auto rounded-full mb-4"
+              />
+              <h4 class="uppercase font-semibold mb-1">Aboagye Henry</h4>
+              <p class="text-gray-500">Lead Developer</p>
+              <p>Software Engineer & UX Enthusiast</p>
+              <p>Student, Computer Science</p>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-1/4 flex items-center">
+            <div class="w-full bg-[#f0f8f4] text-center p-4">
+              <img
+                src="./Images/dapper-man-with-flowers.jpg "
+                alt="Image"
+                class="w-1/2 mx-auto rounded-full mb-4"
+              />
+              <h4 class="uppercase font-semibold mb-1">Aboagye Henry</h4>
+              <p class="text-gray-500">Lead Developer</p>
+              <p>Software Engineer & UX Enthusiast</p>
+              <p>Student, Computer Science</p>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-1/4 flex items-center">
+            <div class="w-full bg-[#f0f8f4] text-center p-4">
+              <img
+                src="./Images/dapper-man-with-flowers.jpg "
+                alt="Image"
+                class="w-1/2 mx-auto rounded-full mb-4"
+              />
+              <h4 class="uppercase font-semibold mb-1">Aboagye Henry</h4>
+              <p class="text-gray-500">Lead Developer</p>
+              <p>Software Engineer & UX Enthusiast</p>
+              <p>Student, Computer Science</p>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-1/4 flex items-center">
+            <div class="w-full bg-[#f0f8f4] text-center p-4">
+              <img
+                src="./Images/dapper-man-with-flowers.jpg "
+                alt="Image"
+                class="w-1/2 mx-auto rounded-full mb-4"
+              />
+              <h4 class="uppercase font-semibold mb-1">Aboagye Henry</h4>
+              <p class="text-gray-500">Lead Developer</p>
+              <p>Software Engineer & UX Enthusiast</p>
+              <p>Student, Computer Science</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gray-100 py-16">
+      <div class="container mx-auto px-4">
+        <div
+          class="text-center mb-12 bg-blue-600 py-10 text-white rounded-xl"
+          data-aos="fade-up"
         >
-          About Campus Navigator
-        </h2>
-
-        <div class="prose max-w-none text-gray-700 leading-relaxed space-y-4">
-          <p>
-            Welcome to <strong>Campus Navigator</strong>, your essential guide
-            to navigating our bustling university campus with ease. Designed
-            with students, faculty, and visitors in mind, our application
-            leverages the power of interactive mapping and intelligent routing
-            to help you find your way around quickly and efficiently.
-          </p>
-
-          <h3 class="text-2xl font-semibold text-gray-800 mt-6 mb-3">
-            Our Mission
-          </h3>
-          <p>
-            Our mission is to simplify campus exploration. We understand that a
-            large university campus can be overwhelming, especially for
-            newcomers. By providing clear directions, detailed location
-            information, and an intuitive interface, we aim to reduce stress and
-            enhance the campus experience for everyone.
-          </p>
-
-          <h3 class="text-2xl font-semibold text-gray-800 mt-6 mb-3">
-            Key Features
-          </h3>
-          <ul class="list-disc list-inside space-y-2 pl-4">
-            <li>
-              <strong>Interactive Campus Map:</strong> A dynamic map showing all
-              key buildings, facilities, and points of interest.
-            </li>
-            <li>
-              <strong>Smart Search:</strong> Easily find any campus location by
-              name.
-            </li>
-            <li>
-              <strong>Turn-by-Turn Directions:</strong> Get precise directions
-              for walking, driving, or cycling between any two points on campus,
-              powered by ORS.
-            </li>
-            <li>
-              <strong>"My Location" Feature:</strong> Instantly pinpoint your
-              current position on the map.
-            </li>
-            <li>
-              <strong>Quick Links:</strong> Fast access to popular campus
-              destinations.
-            </li>
-            <li>
-              <strong>Responsive Design:</strong> Optimized for seamless use on
-              any device, from smartphones to desktops.
-            </li>
-          </ul>
-
-          <h3 class="text-2xl font-semibold text-gray-800 mt-6 mb-3">
-            Technology Stack
-          </h3>
-          <p>
-            Campus Navigator is built using modern web technologies to ensure a
-            smooth and robust user experience:
-          </p>
-          <ul class="list-disc list-inside space-y-2 pl-4">
-            <li>
-              <strong>Frontend:</strong> HTML5, CSS3 (Tailwind CSS for
-              utility-first styling)
-            </li>
-            <li>
-              <strong>Mapping Library:</strong> Leaflet.js (lightweight,
-              open-source JavaScript library)
-            </li>
-            <li>
-              <strong>Routing & Geocoding:</strong> Open Route Services (ORS)
-              and Nominatim (OpenStreetMap's geocoder) for directions and
-              address lookup.
-            </li>
-            <li>
-              <strong>Font:</strong> Inter (for clean and modern typography).
-            </li>
-          </ul>
-
-          <h3 class="text-2xl font-semibold text-gray-800 mt-6 mb-3">
-            Our Team (Placeholder)
-          </h3>
-          <p>
-            This project was developed as part of a university coursework to
-            demonstrate practical application of web development and mapping
-            technologies. The team is dedicated to continuous improvement and
-            enhancing the usability of the app.
-          </p>
-          <ul class="list-disc list-inside space-y-2 pl-4">
-            <li><strong>[Team Member 1]:</strong> Role/Contribution</li>
-            <li><strong>[Team Member 2]:</strong> Role/Contribution</li>
-            <li><strong>[Team Member 3]:</strong> Role/Contribution</li>
-          </ul>
-
-          <p class="mt-6 text-base text-gray-600 italic">
-            Thank you for using Campus Navigator!
+          <h2 class="text-3xl font-bold mb-4">Key Features</h2>
+          <p class="text-white text-lg max-w-3xl mx-auto">
+            Explore the powerful features that make Campus Navigator a
+            revolutionary tool for modern university environments.
           </p>
         </div>
-      </section>
-    </main>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-[2rem]">
+          <div
+            class="bg-white hover:bg-blue-600 hover:cursor-pointer duration-300 hover:text-white p-6 rounded shadow"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <h3 class="text-xl font-semibold mb-2">Interactive Campus Map</h3>
+            <p class="text-gray-700">
+              A dynamic map showing all key buildings, facilities, and points of
+              interest on campus.
+            </p>
+          </div>
+          <div
+            class="bg-white hover:bg-blue-600 hover:cursor-pointer duration-300 hover:text-white p-6 rounded shadow"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <h3 class="text-xl font-semibold mb-2">Smart Search</h3>
+            <p class="text-gray-700">
+              Easily find any campus location by name using our intelligent
+              search function.
+            </p>
+          </div>
+          <div
+            class="bg-white hover:bg-blue-600 hover:cursor-pointer duration-300 hover:text-white p-6 rounded shadow"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h3 class="text-xl font-semibold mb-2">Turn-by-Turn Directions</h3>
+            <p class="text-gray-700">
+              Get precise walking, driving, or cycling directions powered by
+              Open Source Routing Machine (OSRM).
+            </p>
+          </div>
+          <div
+            class="bg-white hover:bg-blue-600 hover:cursor-pointer duration-300 hover:text-white p-6 rounded shadow"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <h3 class="text-xl font-semibold mb-2">My Location Feature</h3>
+            <p class="text-gray-700">
+              Instantly pinpoint your current location for quick navigation.
+            </p>
+          </div>
+          <div
+            class="bg-white hover:bg-blue-600 hover:cursor-pointer duration-300 hover:text-white p-6 rounded shadow"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <h3 class="text-xl font-semibold mb-2">Quick Links</h3>
+            <p class="text-gray-700">
+              Fast access to frequently visited destinations like lecture halls,
+              hostels, and libraries.
+            </p>
+          </div>
+          <div
+            class="bg-white hover:bg-blue-600 hover:cursor-pointer duration-300 hover:text-white p-6 rounded shadow"
+            data-aos="fade-up"
+            data-aos-delay="350"
+          >
+            <h3 class="text-xl font-semibold mb-2">Responsive Design</h3>
+            <p class="text-gray-700">
+              Fully optimized for smartphones, tablets, and desktops to provide
+              a seamless experience on any device.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white py-16">
+      <div class="container mx-auto px-[2rem]">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-3xl font-bold mb-4">Technology Stack</h2>
+          <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+            Campus Navigator is built using a modern, scalable tech stack to
+            ensure performance, stability, and a rich user experience.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white hover:bg-blue-600 hover:cursor-pointer duration-300 hover:text-white p-6 rounded shadow"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <h3 class="text-xl font-semibold mb-2">Frontend</h3>
+            <p class="text-gray-700">
+              HTML5, CSS3 with Tailwind CSS for fast, utility-first styling.
+            </p>
+          </div>
+          <div
+            class="bg-white hover:bg-blue-600 hover:cursor-pointer duration-300 hover:text-white p-6 rounded shadow"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <h3 class="text-xl font-semibold mb-2">Mapping Library</h3>
+            <p class="text-gray-700">
+              Leaflet.js – a lightweight, open-source JavaScript library for
+              interactive maps.
+            </p>
+          </div>
+          <div
+            class="bg-white hover:bg-blue-600 hover:cursor-pointer duration-300 hover:text-white p-6 rounded shadow"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h3 class="text-xl font-semibold mb-2">Routing & Geocoding</h3>
+            <p class="text-gray-700">
+              OSRM for routing, and Nominatim (OpenStreetMap) for address lookup
+              and geolocation services.
+            </p>
+          </div>
+          <div
+            class="bg-white hover:bg-blue-600 hover:cursor-pointer duration-300 hover:text-white p-6 rounded shadow"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <h3 class="text-xl font-semibold mb-2">Font</h3>
+            <p class="text-gray-700">
+              Inter – A modern, highly readable font designed for user
+              interfaces.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer - Consistent with index.html -->
-    <footer class="bg-gray-800 text-white p-4 mt-6">
-      <div class="container mx-auto text-center text-gray-400 text-sm">
-        &copy; 2025 Campus Navigator. All rights reserved.
+    <footer class="bg-gray-100 py-10">
+      <div class="container mx-auto px-[2rem]">
+        <div class="flex flex-wrap -mx-4">
+          <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <h3 class="text-lg font-bold mb-4">Navigation</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="./index.html" class="text-gray-700 hover:underline"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="./about.html" class="text-gray-700 hover:underline"
+                  >About us</a
+                >
+              </li>
+
+              <li>
+                <a href="./contact.html" class="text-gray-700 hover:underline"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <h3 class="text-lg font-bold mb-4">Services</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="/index.html" class="text-gray-700 hover:underline"
+                  >Volunteer</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <h3 class="text-lg font-bold mb-4">Contact</h3>
+            <address class="text-gray-700">
+              Office Location,<br />Main Campus, Tesano-Accra,<br />Digital
+              Adress: GA-167-2979.
+            </address>
+            <ul class="mt-4 space-y-2 text-gray-700">
+              <li>
+                <a href="tel:+233246888479" class="hover:underline"
+                  >+233 (0) 246 888 479</a
+                >
+              </li>
+              <li>
+                <a href="tel:+233257689235" class="hover:underline"
+                  >+233 (0) 591 120 999</a
+                >
+              </li>
+              <li>
+                <a href="mailto:info@oadonline.org" class="hover:underline"
+                  >info@oadonline.org</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <h3 class="text-lg font-bold mb-4">Connect</h3>
+            <div class="flex space-x-4 text-gray-700">
+              <a href=" " class="hover:text-pink-600"
+                ><span class="icon-instagram"></span
+              ></a>
+              <a href=" " class="hover:text-blue-400"
+                ><span class="icon-twitter"></span
+              ></a>
+              <a href=" " class="hover:text-blue-600"
+                ><span class="icon-facebook"></span
+              ></a>
+              <a href="  " class="hover:text-blue-800"
+                ><span class="icon-linkedin"></span
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-8 text-gray-600">
+          <p>
+            &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All Rights Reserved.
+          </p>
+        </div>
       </div>
     </footer>
+
+    <script>
+      const tabLinks = document.querySelectorAll(".tab-link");
+      const contentSections = document.querySelectorAll(
+        "#vision, #mission, #goals"
+      );
+
+      tabLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          // Hide all content sections
+          contentSections.forEach((section) => section.classList.add("hidden"));
+
+          // Remove active tab styles
+          tabLinks.forEach((link) =>
+            link.classList.remove(
+              "font-semibold",
+              "border-b-2",
+              "border-blue-600"
+            )
+          );
+
+          // Show the selected tab content
+          const targetId = link.getAttribute("data-target");
+          document.getElementById(targetId).classList.remove("hidden");
+
+          // Highlight active tab
+          link.classList.add("font-semibold", "border-b-2", "border-blue-600");
+        });
+      });
+    </script>
   </body>
 </html>
