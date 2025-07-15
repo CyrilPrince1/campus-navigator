@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Campus Navigator</title>
+    <title>Campus Navigator - GROUP_F_4</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Inter Font -->
@@ -11,21 +11,21 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Leaflet  -->
+    <!-- Leaflet CSS -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
     />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script
-      defer
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
     ></script>
-
-    <script defer src="script.js"></script>
-    <!-- decording coords with polyline -->
-    <script defer src="https://unpkg.com/@mapbox/polyline"></script>
-    <link rel="stylesheet" href="style.css" />
+    <!-- Custom CSS Link (for Leaflet overrides and minimal custom styles) -->
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body class="min-h-screen flex flex-col font-inter bg-gray-100 antialiased">
     <!-- Header -->
@@ -122,7 +122,7 @@
               <input
                 type="text"
                 id="origin-input"
-                placeholder="click icon to get your current loc."
+                placeholder="Your location or a building name"
                 class="flex-grow p-3 focus:outline-none"
               />
               <button
@@ -140,12 +140,15 @@
               class="block text-gray-700 text-sm font-medium mb-2"
               >To:</label
             >
-            <!-- <input
+            <input
               type="text"
               id="destination-input"
               placeholder="e.g., Library, Building A"
               class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
-            /> -->
+              <<<<<<<
+              HEAD
+            />
+            ======= /> -->
 
             <select
               id="destination-input"
@@ -154,7 +157,7 @@
               <option value="">Select</option>
               <option value="Library">Library</option>
               <option value="AdminBuilding">Admin Building</option>
-              <option value="Focis">Focis Block</option>
+              <option value="Focis">Focis</option>
               <option value="EngineeringBuilding">Engineering Building</option>
               <option value="Cafeteria">Cafeteria</option>
               <option value="LectureHallB">Lecture Hall B</option>
@@ -162,6 +165,7 @@
               <option value="BlockC">Block C</option>
               <option value="Colt">Colt</option>
             </select>
+            >>>>>>> 8ecd3e1 (coords update)
           </div>
           <div class="mb-6">
             <label
@@ -175,7 +179,7 @@
             >
               <option value="WALKING">🚶 Walking</option>
               <option value="DRIVING">🚗 Driving</option>
-              <option value="CYCLING">🚲 Bicycling</option>
+              <option value="BICYCLING">🚲 Bicycling</option>
             </select>
           </div>
           <button
@@ -230,13 +234,13 @@
             </button>
             <button
               class="quick-link-button bg-yellow-500 text-white p-3 rounded-lg shadow-md hover:bg-yellow-600 transition duration-300"
-              data-location="AdminBuilding"
+              data-location="Admin Building"
             >
               Admin Building
             </button>
             <button
               class="quick-link-button bg-red-500 text-white p-3 rounded-lg shadow-md hover:bg-red-600 transition duration-300"
-              data-location="LectureHallB"
+              data-location="Lecture Hall B"
             >
               Lecture Hall B
             </button>
@@ -261,19 +265,103 @@
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white p-4 mt-6">
-      <div class="container mx-auto text-center text-gray-400 text-sm">
-        &copy; 2025 Campus Navigator. All rights reserved.
+    <!-- Footer - Consistent with index.html -->
+    <footer class="bg-gray-100 py-10">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap -mx-4">
+          <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <h3 class="text-lg font-bold mb-4">Navigation</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="./index.html" class="text-gray-700 hover:underline"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="./about.html" class="text-gray-700 hover:underline"
+                  >About us</a
+                >
+              </li>
+
+              <li>
+                <a href="./contact.html" class="text-gray-700 hover:underline"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <h3 class="text-lg font-bold mb-4">Services</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="/index.html" class="text-gray-700 hover:underline"
+                  >Volunteer</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <h3 class="text-lg font-bold mb-4">Contact</h3>
+            <address class="text-gray-700">
+              Office Location,<br />Main Campus, Tesano-Accra,<br />Digital
+              Adress: GA-167-2979.
+            </address>
+            <ul class="mt-4 space-y-2 text-gray-700">
+              <li>
+                <a href="tel:+233246888479" class="hover:underline"
+                  >+233 (0) 246 888 479</a
+                >
+              </li>
+              <li>
+                <a href="tel:+233257689235" class="hover:underline"
+                  >+233 (0) 591 120 999</a
+                >
+              </li>
+              <li>
+                <a href="mailto:info@oadonline.org" class="hover:underline"
+                  >info@oadonline.org</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+            <h3 class="text-lg font-bold mb-4">Connect</h3>
+            <div class="flex space-x-4 text-gray-700">
+              <a href=" " class="hover:text-pink-600"
+                ><span class="icon-instagram"></span
+              ></a>
+              <a href=" " class="hover:text-blue-400"
+                ><span class="icon-twitter"></span
+              ></a>
+              <a href=" " class="hover:text-blue-600"
+                ><span class="icon-facebook"></span
+              ></a>
+              <a href="  " class="hover:text-blue-800"
+                ><span class="icon-linkedin"></span
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-8 text-gray-600">
+          <p>
+            &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All Rights Reserved.
+          </p>
+        </div>
       </div>
     </footer>
 
     <!-- Leaflet JavaScript -->
-    <!-- <script
+    <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
       integrity="sha256-20nQCchB9co0qIjJTKh2QOkE84NkT+ssysyMRzFazM8="
       crossorigin=""
-    ></script> -->
+    ></script>
     <!-- Custom JavaScript Link -->
+    <script src="script.js"></script>
   </body>
 </html>
